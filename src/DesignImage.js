@@ -18,9 +18,9 @@ class DesignImage extends Component {
     const image = new window.Image();
     image.src = this.props.image;
     image.onload = () => {
-        this.setState({
-            image: image
-        });
+      this.setState({
+        image: image
+      });
     };
   }
 
