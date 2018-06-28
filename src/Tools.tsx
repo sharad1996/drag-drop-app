@@ -1,34 +1,19 @@
-import React, {Component} from 'react';
+import * as React from 'react';
+import Dropzone from 'react-dropzone';
 import {
-    TabContent,
-    TabPane,
-    Nav,
-    NavItem,
-    NavLink,
-    Row,
     Col,
     FormGroup,
-    Label
+    Row,
+    TabContent,
+    TabPane
 } from 'reactstrap';
-import classnames from 'classnames';
-import Dropzone from 'react-dropzone';
 
-const style = {
-  borderColor: 'rgb(255, 255, 255)',
-  borderRadius: '5px',
-  borderStyle: 'none',
-  borderWidth: '0px',
-  height: '20px',
-  position: 'relative',
-  width: '100px'
-}
-
-class Tools extends Component {
-    state = {
+class Tools extends React.Component<any> {
+    public state = {
         activeTab: '1'
     };
 
-    toggle = (tab) => {
+    public toggle = (tab: any) => {
         if (this.state.activeTab !== tab) {
             this.setState({
                 activeTab: tab
@@ -36,7 +21,7 @@ class Tools extends Component {
         }
     };
 
-    render() {
+    public render() {
         return <Row>
             <Col xs={12}>
                 <div>
@@ -46,7 +31,7 @@ class Tools extends Component {
                                 <Col sm="12">
                                     <FormGroup>
                                         <button className="dropzone-container">
-                                            <Dropzone style={style} onDrop={this.props.onFileDrop}>
+                                            <Dropzone style={{ width: '150px', height: '30px'}} onDrop={this.props.onFileDrop}>
                                             Select picture
                                             </Dropzone>
                                         </button>

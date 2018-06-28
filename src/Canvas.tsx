@@ -1,15 +1,14 @@
-import React from 'react';
+import * as React from 'react';
+import { Layer, Stage } from 'react-konva';
 import {
-    Row,
-    Col
+    Col,
+    Row
 } from 'reactstrap';
-import {Stage, Layer} from 'react-konva';
-
 import DesignImage from "./DesignImage";
 
-const Canvas = props => {
+const Canvas = (props:any) => {
     return <Row>
-        <Col xs={12} className={"canvas-container"}>
+        <Col xs={12} className={"canvas-container"} id="canvas">
             <div className={"object-container"}>
                 <img className={"object-img"} src={""} alt={""}/>
                 <div className="drawing-area">

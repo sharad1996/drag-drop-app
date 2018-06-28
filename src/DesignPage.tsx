@@ -1,32 +1,28 @@
-import React, {Component} from 'react';
-import {
-    Row,
-    Col
-} from 'reactstrap';
+import * as React from 'react';
+import { Col, Row } from 'reactstrap';
+import Canvas from './Canvas';
+import Tools from './Tools';
 
-import Tools from "./Tools";
-import Canvas from "./Canvas";
+class DesignPage extends React.Component {
 
-class DesignPage extends Component {
-
-    state = {
+    public state = {
         files: [],
         image: '',
         text: ''
     };
 
-    handleTextChange = e => {
+    public handleTextChange = (e: any) => {
         this.setState({text: e.target.value});
     };
 
-    handleFileDrop = files => {
+    public handleFileDrop = (files: any) => {
         this.setState({
             files,
             image: files[0].preview
         });
     };
 
-    render() {
+    public render() {
         return <Row>
             <Col xs={12} md={4}>
                 <Tools
