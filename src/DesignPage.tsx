@@ -1,9 +1,11 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import { Col, Row } from 'reactstrap';
+import { showTask } from './action/index';
 import Canvas from './Canvas';
 import Tools from './Tools';
 
-class DesignPage extends React.Component {
+class DesignPage extends React.Component<any> {
 
     public state = {
         files: [],
@@ -20,13 +22,14 @@ class DesignPage extends React.Component {
             files,
             image: files[0].preview
         });
+        this.props.showTask();
     };
 
     public render() {
         return <Row>
             <Col xs={12} md={4}>
                 <Tools
-                    files={this.state.files}
+                    files={this.props.files}
                     onTextChange={this.handleTextChange}
                     onFileDrop={this.handleFileDrop}/>
             </Col>
@@ -39,4 +42,17 @@ class DesignPage extends React.Component {
     }
 }
 
-export default DesignPage;
+const mapStateToProps = (state: any) => ({
+  files: state.Task.files,
+})
+
+const mapDispatchToProps = (dispatch: any) => ({
+  showTask : (task: any) => {
+    dispatch(showTask(task))
+  },
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DesignPage)
