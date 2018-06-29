@@ -35,11 +35,6 @@ class Tools extends React.Component<any> {
                         Select picture
                       </Dropzone>
                     </button>
-                    <button className="dropzone-container2">
-                      <Dropzone style={{ width: '150px', height: '30px'}} onDrop={this.props.onFileDrop}>
-                        Select picture
-                      </Dropzone>
-                    </button>
                   </FormGroup>
                 </Col>
               </Row>

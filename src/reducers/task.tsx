@@ -8,7 +8,6 @@ const initialState = {
 const Task = (state = initialState, action: any) => {
   switch (action.type) {
     case SHOW_TASK:
-    debugger
       return {
         ...state,
         image: action.text

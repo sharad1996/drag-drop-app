@@ -22,7 +22,6 @@ class DesignPage extends React.Component<any> {
       files,
       image: files[0].preview
     });
-    debugger
     this.props.showTask(files[0].preview);
   };
 
@@ -35,7 +34,7 @@ class DesignPage extends React.Component<any> {
           onFileDrop={this.handleFileDrop}
         />
       </Col>
-      <Col xs={12} md={4}>
+      <Col xs={12} md={5}>
         <Canvas
           text={this.state.text}
           image={this.props.image}
