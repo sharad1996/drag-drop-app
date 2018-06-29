@@ -30,7 +30,12 @@ class Tools extends React.Component<any> {
               <Row>
                 <Col sm="12">
                   <FormGroup>
-                    <button className="dropzone-container">
+                    <button className="dropzone-container1">
+                      <Dropzone style={{ width: '150px', height: '30px'}} onDrop={this.props.onFileDrop}>
+                        Select picture
+                      </Dropzone>
+                    </button>
+                    <button className="dropzone-container2">
                       <Dropzone style={{ width: '150px', height: '30px'}} onDrop={this.props.onFileDrop}>
                         Select picture
                       </Dropzone>

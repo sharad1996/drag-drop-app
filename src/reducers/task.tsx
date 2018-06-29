@@ -8,9 +8,10 @@ const initialState = {
 const Task = (state = initialState, action: any) => {
   switch (action.type) {
     case SHOW_TASK:
+    debugger
       return {
         ...state,
-        files: action.text
+        image: action.text
       };
     default:
       return state;

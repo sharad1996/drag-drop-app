@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@types/classnames": "^2.2.4",
+    "@types/enzyme": "^3.1.11",
     "@types/react-dropzone": "^4.2.0",
     "@types/react-redux": "^6.0.3",
     "@types/reactstrap": "^6.0.0",
@@ -16,14 +17,17 @@
     "react-konva": "^1.7.7",
     "react-redux": "^5.0.7",
     "react-scripts-ts": "2.16.0",
+    "react-test-renderer": "^16.4.1",
     "reactstrap": "^6.1.0",
     "redux": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "test": "jest",
+    "eject": "react-scripts-ts eject",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
+    "pretest": "npm run lint"
   },
   "devDependencies": {
     "@types/jest": "^23.1.3",

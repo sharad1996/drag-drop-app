@@ -22,22 +22,23 @@ class DesignPage extends React.Component<any> {
       files,
       image: files[0].preview
     });
-    this.props.showTask();
+    debugger
+    this.props.showTask(files[0].preview);
   };
 
   public render() {
     return <Row>
       <Col xs={12} md={4}>
         <Tools
-          files={this.props.files}
+          files={this.state.files}
           onTextChange={this.handleTextChange}
           onFileDrop={this.handleFileDrop}
         />
       </Col>
-      <Col xs={12} md={5}>
+      <Col xs={12} md={4}>
         <Canvas
           text={this.state.text}
-          image={this.state.image}
+          image={this.props.image}
         />
       </Col>
     </Row>;
@@ -45,7 +46,7 @@ class DesignPage extends React.Component<any> {
 }
 
 const mapStateToProps = (state: any) => ({
-  files: state.Task.files,
+  image: state.Task.image,
 })
 
 const mapDispatchToProps = (dispatch: any) => ({
